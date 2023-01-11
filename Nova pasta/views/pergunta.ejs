@@ -1,0 +1,22 @@
+<%- include ('./partials/header.ejs') %>
+
+    <body>
+        <%- include ('./partials/navebar.ejs') %>
+            <div class="container mt-3">
+                
+                    <div class="">
+                        <h2><%= Pergunta.titulo %></h2>
+                    </div>
+                    <div class="">
+                        <p><%= Pergunta.descricao %></p>
+                    </div>          
+                <form action="/responder" method="POST">
+                    <h3>Responda</h3>
+                    <label for="" class="mb-2">Resposta:</label>
+                    <textarea placeholder="Digite sua resposta" name="corpo" class="form-control"></textarea>
+                      <input type="hidden" name="pergunta" value="<%= Pergunta.id %>" >
+                    <button type="submit" class="btn btn-primary mt-2">Responder</button>
+                </form>
+            </div>
+    </body>
+    <%- include ('./partials/footer.ejs') %>
